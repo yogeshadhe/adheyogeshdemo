@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/GreyBgColor">
+
+
+    <!--toolbar layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar_inner">
+
+        </include>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:orientation="vertical">
+
+                <!--Profile Pic-->
+                <!--profile pic circular-->
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                 <!--   <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/img_profileEdit"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/profile_pic"
+                        app:border_color="@color/PinkBgColor"
+                        app:border_width="3dp"
+                        />
+-->                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/profile_photo"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/profile_pic" />
+                </LinearLayout>
+                <!--Profile Pic Ends-->
+
+                <TextView
+                    android:id="@+id/tv_name_ProEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/BlackTextColor"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+
+                <!--Tabs-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/tab"
+                    android:layout_marginBottom="20dp">
+                    <Button
+                        android:id="@+id/btn_basic_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Basic Profile"
+                        android:textSize="11sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:stateListAnimator="@null"
+                        android:background="@drawable/tab_active"/>
+                    <Button
+                        android:id="@+id/btn_caste"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Cast"
+                        android:textSize="11sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:stateListAnimator="@null"
+                        android:background="@android:color/transparent"/>
+                    <Button
+                        android:id="@+id/btn_profession"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="PROFESSION"
+                        android:textSize="11sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:stateListAnimator="@null"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+                <!--Tabs Ends-->
+
+                <!--basic profile-->
+                <LinearLayout
+                    android:id="@+id/layout_basicProfile"
+                    android:layout_width = "match_parent"
+                    android:layout_height = "match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <!--first name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="First Name"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_firstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter First Name"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--middle name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Middle Name"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_middleName"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Middle Name"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--last name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_lastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Last Name"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--mother name-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mother's Name"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_mothersName"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Mother Name"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--gender-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gender"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_gender"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Gender Type"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--dob-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date Of Birth"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_select_dob"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter DOB"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/clock_icon"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--mobile no-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_mobileNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:inputType="number"
+                            android:hint="Enter Mobile Number"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--email id-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email Id"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_emailID"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Email Id"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--state-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="State"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select State"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--city-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="City"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select City"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--taluka-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Taluka"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_taluka"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Taluka"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--village-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Village"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_village"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Village"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--address-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Native Address"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_B_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Native Address"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--Button-->
+                    <Button
+                        android:id="@+id/btn_basicProfile_submit"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:text="Save"
+                        android:textSize="14sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:stateListAnimator="@null"/>
+                    <!--Button Ends-->
+
+                </LinearLayout>
+
+                <!--caste layout-->
+                <LinearLayout
+                    android:id="@+id/layout_caste"
+                    android:visibility="gone"
+                    android:layout_width = "match_parent"
+                    android:layout_height = "match_parent"
+                    android:orientation="vertical">
+
+                    <!--caste-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Caste"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <EditText
+                            android:id="@+id/ed_C_caste"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Caste"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--sub caste-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Subcaste"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_C_subCaste"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Subcaste"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--birth time-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Time Of Birth"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_C_birthTime"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Time Of Birth"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/clock_icon"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--gotra-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gotra"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <EditText
+                            android:id="@+id/ed_C_gotra"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Gotra"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--marital status-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Marital Status"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_C_marital"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Marital Status"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--marriage anniversery-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Marriage Anniversary"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_C_marriageDate"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Marriage Anniversary"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/calender_icon"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--blood group-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Group"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_C_bloodGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Blood Group"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--Button-->
+                    <Button
+                        android:id="@+id/btn_caste_submit"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:text="Save"
+                        android:textSize="14sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:stateListAnimator="@null"/>
+                    <!--Button Ends-->
+
+                </LinearLayout>
+
+                <!--profession layout-->
+                <LinearLayout
+                    android:id="@+id/layout_profession"
+                    android:visibility="visible"
+                    android:layout_width = "match_parent"
+                    android:layout_height = "match_parent"
+                    android:orientation="vertical">
+
+                    <!--highest education-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Highest Education"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_highEducation"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Highest Education"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--degree details-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Details OF Degree"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <EditText
+                            android:id="@+id/ed_P_degreeDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Details OF Degree"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--office name layout-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Office Name"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_officeName"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Office Name"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--state layout-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Office State"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_P_officeState"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Office State"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--city layout-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Office City"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <AutoCompleteTextView
+                            android:id="@+id/ac_P_officeCity"
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Office City"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:drawableRight="@drawable/down_arrow"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--income range-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Income Range"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_incomeRange"
+                            android:inputType="number"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Select Income Range"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--office address-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Office Address"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_officeAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Office Address"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--hobbies-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hobbies"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_hobbies"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Hobbies"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--achivements-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achivements"
+                            android:textSize="12sp"
+                            android:textColor="@color/BlackTextColor"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"/>
+                        <EditText
+                            android:id="@+id/ed_P_achivements"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="Enter Achivements"
+                            android:textSize="11sp"
+                            android:textColorHint="@color/GreyTextColor"
+                            android:textColor="@color/BlackTextColor"
+                            android:background="@drawable/inputbox_inn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"/>
+                    </LinearLayout>
+
+                    <!--Button-->
+                    <Button
+                        android:id="@+id/btn_profession_submit"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:text="Save"
+                        android:textSize="14sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:stateListAnimator="@null"/>
+                    <!--Button Ends-->
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+</LinearLayout>
+
+

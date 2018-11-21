@@ -1,0 +1,30 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/menu_bottom_line"
+    android:theme="@style/AppTheme"
+    local:popupTheme="@style/AppTheme"
+    local:theme="@style/AppTheme">
+
+    <ImageView
+        android:id="@+id/ccrlogo"
+        android:layout_width="130dp"
+        android:layout_height="39dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:src="@drawable/toolbar_logo"/>
+
+    <ImageView
+        android:id="@+id/ccrnumber"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/call_new_icon" />
+
+</android.support.v7.widget.Toolbar>

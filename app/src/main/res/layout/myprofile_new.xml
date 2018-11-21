@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="56dp"
+    android:background="@color/BgColor">
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/btn"
+       />
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/WhiteBgColor"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="MY PROFILE"
+            android:textSize="20sp"
+            android:textColor="@color/BlackTextColor"
+            android:src="@drawable/toolbar_logo"/>
+    </LinearLayout>-->
+<!--
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/input_box"
+        android:text="First Name"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="@color/InputHintColor"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/input_box"
+        android:text="Last Name"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColor="@color/InputHintColor"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/input_box"
+        android:text="Email Id"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColor="@color/InputHintColor"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <EditText
+        android:id="@+id/usercontact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/input_box"
+        android:text="Mobile Number"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColor="@color/InputHintColor"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <Button
+        android:id="@+id/Saveprofile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Save Changes"
+        android:textSize="20sp"
+        android:textColor="@color/WhiteTextColor"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/green_btn"/>-->
+
+    <!--<android.support.design.widget.CoordinatorLayout
+        android:id="@+id/snackbarCoordinatorLayout_att"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.design.widget.CoordinatorLayout>-->
+
+  <!-- <fragment
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/frameLayout"
+       />-->
+   <FrameLayout
+       android:id="@+id/frame_container"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
+
+</LinearLayout>

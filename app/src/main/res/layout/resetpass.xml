@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_marginTop="56dp"
+    android:orientation="vertical"
+    android:background="@color/PinkBgColor">
+
+
+    <FrameLayout android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Old Password"
+                        android:textSize="12sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/ed_old_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:inputType="textPassword"
+                        android:hint="Enter Password"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="New Password"
+                        android:textSize="12sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/ed_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:inputType="textPassword"
+                        android:hint="Enter Password"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retype Password"
+                        android:textSize="12sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+                    <EditText
+                        android:id="@+id/ed_retype_pass"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Retype Password"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+                <!--Button-->
+                <Button
+                    android:id="@+id/btn_forgotPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Change Password"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:stateListAnimator="@null"/>
+                <!--Button Ends-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--<android.support.design.widget.CoordinatorLayout
+            android:id = "@+id/coordinator_layout"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:layout_marginTop="400dp">
+        </android.support.design.widget.CoordinatorLayout>
+-->
+    </FrameLayout>
+
+
+</LinearLayout>
+
+

@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">BanjaraSathi</string>
+
+
+    <string-array name="My_Profile"></string-array>
+    <!--<string-array name="Newsfeed"></string-array>-->
+    <string-array name="Home"></string-array>
+    <string-array name="notification"></string-array>
+    <string-array name="news"></string-array>
+    <string-array name="aboutus"></string-array>
+
+    <string-array name="banjara_history">
+
+    </string-array>
+
+    <string-array name="account_set">
+
+    </string-array>
+    <string-array name="logout">
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- <string name="hello_blank_fragment">Hello blank fragment</string>-->
+
+
+    <!--navigation items-->
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>My Profile</item>
+        <item>My Booking</item>
+        <item>Settings</item>
+        <item>Rate us</item>
+        <item>About Us</item>
+        <item>Log Out</item>
+        <item></item>
+
+    </string-array>
+    <!--navigation drawer items-->
+    <string name="desc_list_item_icon">Item Icon</string>
+    <array name="nav_drawer_icons">
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item>@drawable/bookcab_new_icon</item>
+        <item></item>
+
+    </array>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

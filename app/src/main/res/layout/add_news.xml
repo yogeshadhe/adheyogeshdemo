@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical"
+    android:id="@+id/layout_sign_up"
+    android:background="@color/GreyBgColor">
+
+    <!--Page Title-->
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/PinkBgColor">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="18sp"
+            android:textColor="@color/WhiteTextColor"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"/>
+    </LinearLayout>
+    <!--Page Title Ends-->
+
+    <!--toolbar layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar_inner">
+
+        </include>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/img_add_new"
+                    />
+
+                <Button
+
+                    android:id="@+id/btn_browse_img"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="Add photo"
+                    android:textSize="14sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/browse_btn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:stateListAnimator="@null"/>
+                <!--Button Ends-->
+
+
+            </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+                    <EditText
+                        android:id="@+id/ed_firstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter First Name"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Discription"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/ed_middleName"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:hint="Enter New Discription"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+                <!--Button-->
+                <Button
+                    android:id="@+id/btn_next_signup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Add News"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:stateListAnimator="@null"/>
+                <!--Button Ends-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- <android.support.design.widget.CoordinatorLayout
+             android:id = "@+id/coordinator_layout"
+             android:layout_width = "match_parent"
+             android:layout_height = "match_parent"
+             android:layout_marginTop="370dp">
+         </android.support.design.widget.CoordinatorLayout>
+ -->
+    </FrameLayout>
+</LinearLayout>
+

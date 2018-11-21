@@ -1,0 +1,381 @@
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/GreyBgColor">
+
+    <!--toolbar layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar_inner">
+
+        </include>
+
+    </LinearLayout>
+
+
+    <!--Numbers-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/WhiteBgColor"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/line">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/active_circle"
+                    android:text="1"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/active_circle"
+                    android:text="2"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/active_circle"
+                    android:text="3"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--Numbers Ends-->
+
+    <FrameLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:orientation="vertical">
+
+<!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile Photo*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+
+                    &lt;!&ndash;profile pic circular&ndash;&gt;
+                  &lt;!&ndash;  <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/img_profile"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/profile_pic"
+
+                        />&ndash;&gt;
+                    &lt;!&ndash;app:border_color="#d32f7d"
+                    app:border_width="3dp"
+
+                    Profile Pic&ndash;&gt;
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="116dp"
+                        android:layout_height="116dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/profile_photo"
+                        android:gravity="center">
+                        <ImageView
+
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                    &lt;!&ndash;Profile Pic Ends&ndash;&gt;
+
+                    &lt;!&ndash;Button&ndash;&gt;
+                    <Button
+                        android:id="@+id/btn_browse_img"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:text="Browse"
+                        android:textSize="14sp"
+                        android:textColor="@color/WhiteTextColor"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/browse_btn"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:stateListAnimator="@null"/>
+                    &lt;!&ndash;Button Ends&ndash;&gt;
+                </LinearLayout>
+-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current State*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Select State"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current City*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Select City"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current Address*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+
+
+
+
+
+                        android:layout_marginBottom="5dp"/>
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Current Address"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Password*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/ed_password123"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Password"
+                        android:inputType="textPassword"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retype Password*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+                    <EditText
+                        android:id="@+id/ed_reenter_pass123"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:inputType="textPassword"
+                        android:hint="Verify Password"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+                <!--Button-->
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Register"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:stateListAnimator="@null"/>
+                <!--Button Ends-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--<android.support.design.widget.CoordinatorLayout
+            android:id = "@+id/coordinator_layout"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:layout_marginTop="370dp">
+        </android.support.design.widget.CoordinatorLayout>
+-->
+    </FrameLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/GreyBgColor">
+
+    <!--toolbar layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar_inner">
+
+        </include>
+
+    </LinearLayout>
+
+    <!--Numbers-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/WhiteBgColor"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/line">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/active_circle"
+                    android:text="1"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/active_circle"
+                    android:text="2"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/circle"
+                    android:text="3"
+                    android:textSize="13sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--Numbers Ends-->
+
+    <FrameLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Education*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_edducation"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Education Details"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profesion"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_profesion"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Profesion11"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Income"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_occupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Income"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Caste*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_caste"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Select Caste"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subcaste"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_subCaste"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Subcaste"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gotra*"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_gotra"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Select Gotra"
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Family details"
+                        android:textSize="12sp"
+                        android:textColor="@color/BlackTextColor"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <EditText
+                        android:id="@+id/ed_family_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="Enter Family details "
+                        android:textSize="11sp"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+
+
+                <!--Button-->
+                <Button
+                    android:id="@+id/btn_signup_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Next"
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/WhiteTextColor"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:stateListAnimator="@null"/>
+                <!--Button Ends-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+       <!-- <android.support.design.widget.CoordinatorLayout
+            android:id = "@+id/coordinator_layout"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:layout_marginTop="370dp">
+        </android.support.design.widget.CoordinatorLayout>
+-->
+    </FrameLayout>
+
+</LinearLayout>
+
