@@ -36,16 +36,7 @@
     <!--Page Title Ends-->
 
     <!--toolbar layout-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include
-            layout="@layout/toolbar"
-            android:id="@+id/toolbar_inner">
 
-        </include>
-
-    </LinearLayout>
 
     <!--Numbers-->
     <LinearLayout
