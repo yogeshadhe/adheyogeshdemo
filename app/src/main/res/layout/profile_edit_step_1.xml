@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="56dp"
-
-    android:background="@color/GreyBgColor"
+    android:background="@color/WhiteBgColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
-   <!-- xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"-->
 
 
     <FrameLayout
         android:layout_width = "match_parent"
-        android:layout_height = "match_parent">
+        android:layout_height = "match_parent"
+        android:background="@color/WhiteBgColor">
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -32,44 +26,25 @@
         android:layout_height = "match_parent"
         android:orientation="vertical">
 
-        <!--Profile Pic-->
-        <!--profile pic circular-->
-        <!--<LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
 
-
-
-            &lt;!&ndash;<de.hdodenhof.circleimageview.CircleImageView
-
-                android:id="@+id/img_profileEdit"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/profile_pic"
-                app:border_color="@color/PinkBgColor"
-                app:border_width="3dp"
-            />&ndash;&gt;
-        </LinearLayout>-->
         <LinearLayout
             android:visibility="visible"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:orientation="horizontal"
-            android:background="@drawable/profile_photo"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="0dp"
 
+            android:orientation="horizontal">
+<!--
+            android:background="@drawable/profile_photo"
+-->
             <ImageView
                 android:id="@+id/img_profileEdit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/profile_pic" />
         </LinearLayout>
 
@@ -98,9 +73,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/tab"
             android:layout_marginBottom="20dp">
             <Button
@@ -128,7 +103,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="PROFESSION"
+                android:text="ADDRESS"
                 android:textSize="11sp"
                 android:textColor="@color/BlackTextColor"
                 android:stateListAnimator="@null"
@@ -139,7 +114,7 @@
         <LinearLayout
             android:id="@+id/layout_basicProfile"
             android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
+            android:layout_height = "wrap_content"
             android:visibility="visible"
             android:orientation="vertical">
 
@@ -157,7 +132,7 @@
                     android:text="First Name"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
+
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -169,7 +144,6 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -187,7 +161,6 @@
                     android:text="Middle Name"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -199,7 +172,6 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -217,7 +189,6 @@
                     android:text="Last Name"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -229,7 +200,6 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -249,7 +219,6 @@
                     android:text="Gender"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <AutoCompleteTextView
@@ -263,7 +232,6 @@
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
                     android:drawableRight="@drawable/down_arrow"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -281,7 +249,7 @@
                     android:text="Date Of Birth"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
+
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -295,7 +263,7 @@
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
                     android:drawableRight="@drawable/clock_icon"
-                    android:paddingLeft="20dp"
+
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -314,7 +282,7 @@
                     android:text="Email Id"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
+
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -326,7 +294,7 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
+
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -344,7 +312,7 @@
                     android:text="Mobile Number"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
+
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -357,7 +325,7 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
+
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -368,15 +336,17 @@
             <!--Button-->
             <Button
                 android:id="@+id/btn_basicProfile_submit"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Save"
+                android:text="Update"
                 android:textSize="14sp"
                 android:textColor="@color/WhiteTextColor"
                 android:textAllCaps="false"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:stateListAnimator="@null"/>
             <!--Button Ends-->
@@ -388,7 +358,7 @@
             android:id="@+id/layout_caste"
             android:visibility="gone"
             android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
+            android:layout_height = "wrap_content"
             android:orientation="vertical">
 
             <!--caste-->
@@ -409,10 +379,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Education*"
+                        android:text="Education"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
+
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -426,7 +396,7 @@
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -445,7 +415,7 @@
                         android:text="Profesion"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
+
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -453,13 +423,13 @@
                         android:id="@+id/ac_profesion"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Enter Profesion11"
+                        android:hint="Enter Profesion"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
 
-                        android:paddingLeft="20dp"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -478,21 +448,9 @@
                         android:text="Income"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
+
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
-                    <!--<AutoCompleteTextView
-                        android:id="@+id/ac_income"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:hint="Enter Income"
-                        android:textSize="11sp"
-                        android:textColorHint="@color/GreyTextColor"
-                        android:textColor="@color/BlackTextColor"
-                        android:drawableRight="@drawable/down_arrow"
-                        android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>-->
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_income"
@@ -504,7 +462,7 @@
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -518,10 +476,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Caste*"
+                        android:text="Caste"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
+
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -535,7 +493,7 @@
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -553,7 +511,6 @@
                         android:text="Subcaste"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -567,7 +524,6 @@
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -582,10 +538,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Gotra*"
+                        android:text="Gotra"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -599,7 +554,6 @@
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -617,7 +571,6 @@
                         android:text="Family details"
                         android:textSize="12sp"
                         android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"/>
 
@@ -630,7 +583,6 @@
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -638,15 +590,17 @@
                 <!--Button-->
                 <Button
                     android:id="@+id/btn_profile_submit"
-                    android:layout_width="180dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="Save"
+                    android:text="Update"
                     android:textSize="14sp"
                     android:textColor="@color/WhiteTextColor"
                     android:textAllCaps="false"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/button"
                     android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:stateListAnimator="@null"/>
                 <!--Button Ends-->
@@ -662,7 +616,7 @@
         <!--profession layout-->
         <LinearLayout
             android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
+            android:layout_height = "wrap_content"
             android:visibility="gone"
             android:id="@+id/layout_profession"
             android:orientation="vertical">
@@ -683,7 +637,6 @@
                     android:text="Current State"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
 
@@ -697,7 +650,6 @@
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
                     android:drawableRight="@drawable/down_arrow"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -716,7 +668,6 @@
                     android:text="Current City"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
 
@@ -730,7 +681,6 @@
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
                     android:drawableRight="@drawable/down_arrow"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -749,7 +699,6 @@
                     android:text="Current Address"
                     android:textSize="12sp"
                     android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="5dp"/>
                 <EditText
@@ -761,7 +710,6 @@
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
                     android:background="@drawable/inputbox_inn"
-                    android:paddingLeft="20dp"
                     android:paddingRight="20dp"/>
             </LinearLayout>
 
@@ -790,18 +738,17 @@
 
 
 
-    </LinearLayout>
+
+    \</LinearLayout>
 
     </ScrollView>
 
-        <android.support.design.widget.CoordinatorLayout
-            android:id = "@+id/coordinator_layout"
-            android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
-            android:layout_marginTop="460dp">
-        </android.support.design.widget.CoordinatorLayout>
+
+
     </FrameLayout>
 
-    </LinearLayout>
+
+
+</LinearLayout>
 
 

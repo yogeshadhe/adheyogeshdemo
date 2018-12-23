@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/GreyBgColor">
+    android:background="@color/WhiteBgColor">
 
     <!--toolbar layout-->
 
@@ -101,7 +101,6 @@
                 android:layout_height = "match_parent"
                 android:orientation="vertical">
 
-<!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -122,8 +121,8 @@
                         android:layout_marginBottom="5dp"/>
 
 
-                    &lt;!&ndash;profile pic circular&ndash;&gt;
-                  &lt;!&ndash;  <de.hdodenhof.circleimageview.CircleImageView
+                    <!--profile pic circular-->
+                  <!--  <de.hdodenhof.circleimageview.CircleImageView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/img_profile"
                         android:layout_width="120dp"
@@ -132,11 +131,11 @@
                         android:layout_centerVertical="true"
                         android:src="@drawable/profile_pic"
 
-                        />&ndash;&gt;
-                    &lt;!&ndash;app:border_color="#d32f7d"
+                        />-->
+                    <!--app:border_color="#d32f7d"
                     app:border_width="3dp"
 
-                    Profile Pic&ndash;&gt;
+                    Profile Pic-->
                     <LinearLayout
                         android:visibility="gone"
                         android:layout_width="116dp"
@@ -150,9 +149,9 @@
                             android:layout_height="110dp"
                             android:layout_gravity="center_vertical"/>
                     </LinearLayout>
-                    &lt;!&ndash;Profile Pic Ends&ndash;&gt;
+                    <!--Profile Pic Ends-->
 
-                    &lt;!&ndash;Button&ndash;&gt;
+                    <!--Button-->
                     <Button
                         android:id="@+id/btn_browse_img"
                         android:layout_width="140dp"
@@ -166,9 +165,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:stateListAnimator="@null"/>
-                    &lt;!&ndash;Button Ends&ndash;&gt;
+                    <!--Button Ends-->
                 </LinearLayout>
--->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -178,27 +176,18 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Current State*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_state"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Select State"
+                        android:hint="Select State*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -211,27 +200,18 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Current City*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_city"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Select City"
+                        android:hint="Select City*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -244,20 +224,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Current Address*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
 
-
-
-
-
-                        android:layout_marginBottom="5dp"/>
                     <AutoCompleteTextView
                         android:id="@+id/ed_address"
                         android:layout_width="match_parent"
@@ -267,8 +234,7 @@
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>
+                        />
                 </LinearLayout>
 
 
@@ -280,28 +246,19 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Password*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <EditText
                         android:id="@+id/ed_password123"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Enter Password"
+                        android:hint="Enter Password*"
                         android:inputType="textPassword"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>
+
+                    />
                 </LinearLayout>
 
 
@@ -313,27 +270,18 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Retype Password*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
+
                     <EditText
                         android:id="@+id/ed_reenter_pass123"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:inputType="textPassword"
-                        android:hint="Verify Password"
+                        android:hint="Verify Password*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>
+                       />
                 </LinearLayout>
 
                 <!--Button-->

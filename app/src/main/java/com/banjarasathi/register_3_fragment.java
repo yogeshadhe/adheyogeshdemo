@@ -85,17 +85,12 @@ public class register_3_fragment extends Fragment
     int READ_PERMISSION = 1;
     private static final int PICK_IMAGE = 1;
     final private int CAPTURE_IMAGE = 2;
-
     private String imgPath;
-
     Button btn_browse_img;
-
     String selectedImagePath = "";
     //TextView ED_IMAGE_PATH;
     String image_encoded;
-
     private Bitmap bitmap;
-
     boolean flag_timeout = true;
     int count = 0;
     ProgressDialog progressDialog;

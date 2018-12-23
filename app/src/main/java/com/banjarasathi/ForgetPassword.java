@@ -220,7 +220,7 @@ public class ForgetPassword extends Fragment
 
                     String url1 = version_url + "contactdetail=" + URLEncoder.encode(emailmob, "UTF-8");
 
-
+                    Log.i("url1_forget","=="+url1);
                     URL url_ver = new URL(url1);
 
                     HttpURLConnection connection = (HttpURLConnection) url_ver.openConnection();
@@ -241,7 +241,7 @@ public class ForgetPassword extends Fragment
                         while ((line = br.readLine()) != null) {
                             response_for = "";
                             response_for += line;
-                            //Log.i("response_image", response_version);
+                            Log.i("response_for", response_for);
 
                         }
                     } else {

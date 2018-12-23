@@ -2,21 +2,11 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+
     android:fillViewport="true">
 
-   <!-- <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        tools:context=".MainActivity"
-        android:orientation="horizontal"
-        android:background="@color/BlackTextColor">-->
 
-
-
-        <!--Popup Start-->
         <LinearLayout
             android:id="@+id/layout_Cityfilter"
             android:layout_width="match_parent"
@@ -36,7 +26,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Filter City"
+                    android:text="Filter"
                     android:textSize="14sp"
                     android:textColor="@color/BlackTextColor"
                     android:layout_gravity="center_vertical"
@@ -98,20 +88,12 @@
                 android:layout_marginTop="10dp">
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="District"
-                    android:textSize="12sp"
-                    android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="5dp"/>
+
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
-                    android:id="@+id/auto_district"
-                    android:hint="Select District"
+                    android:id="@+id/auto_gender"
+                    android:hint="Select Gender"
                     android:editable="false"
                     android:textSize="11sp"
                     android:textColorHint="@color/GreyTextColor"
@@ -129,20 +111,12 @@
                 android:orientation="vertical"
                 android:layout_marginTop="10dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Taluka"
-                    android:textSize="12sp"
-                    android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="5dp"/>
+
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
-                    android:hint="Select Taluka"
-                    android:id="@+id/auto_taluka"
+                    android:hint="Select Age"
+                    android:id="@+id/auto_age"
                     android:editable="false"
                     android:textSize="11sp"
                     android:textColorHint="@color/GreyTextColor"
@@ -159,22 +133,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="City"
-                    android:textSize="12sp"
-                    android:textColor="@color/BlackTextColor"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="5dp"/>
-                <AutoCompleteTextView
+                    <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
-                    android:hint="City"
+                    android:hint="Select Profession"
                     android:textSize="11sp"
-                    android:id="@+id/auto_city"
+                    android:id="@+id/auto_profession"
                     android:editable="false"
                     android:textColorHint="@color/GreyTextColor"
                     android:textColor="@color/BlackTextColor"
@@ -189,22 +153,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Gendr"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
                     <AutoCompleteTextView
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
-                        android:hint="City"
+                        android:hint="Select Cast"
                         android:textSize="11sp"
-                        android:id="@+id/auto_gender"
+                        android:id="@+id/auto_cast"
                         android:editable="false"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
@@ -219,22 +173,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="City"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
                     <AutoCompleteTextView
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
-                        android:hint="Marriatial"
+                        android:hint="Select Sub Cast"
                         android:textSize="11sp"
-                        android:id="@+id/auto_mariatl"
+                        android:id="@+id/auto_SubCast"
                         android:editable="false"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
@@ -244,6 +188,44 @@
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:hint="Select State"
+                        android:textSize="11sp"
+                        android:id="@+id/auto_state"
+                        android:editable="false"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:hint="Select City"
+                        android:textSize="11sp"
+                        android:id="@+id/auto_City"
+                        android:editable="false"
+                        android:textColorHint="@color/GreyTextColor"
+                        android:textColor="@color/BlackTextColor"
+                        android:background="@drawable/inputbox_inn"
+                        android:drawableRight="@drawable/down_arrow"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"/>
+                </LinearLayout>
 
 
             </LinearLayout>

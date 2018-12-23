@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/GreyBgColor">
+    android:background="@color/WhiteBgColor">
 
     <!--toolbar layout-->
 
@@ -107,27 +107,19 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Education*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
+
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_edducation"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Enter Education Details"
+                        android:hint="Sele Education Details*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -140,27 +132,17 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Profesion"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_profesion"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Enter Profesion11"
+                        android:hint="Enter Profesion*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-
-                        android:paddingLeft="20dp"
+                        android:drawableRight="@drawable/down_arrow"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -173,15 +155,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Income"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
+
                     <AutoCompleteTextView
                         android:id="@+id/ac_occupation"
                         android:layout_width="match_parent"
@@ -192,7 +166,7 @@
                         android:textColor="@color/BlackTextColor"
                         android:drawableRight="@drawable/down_arrow"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -203,27 +177,17 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Caste*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_caste"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Select Caste"
+                        android:hint="Select Caste*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -235,27 +199,18 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Subcaste"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_subCaste"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Enter Subcaste"
+                        android:hint="Enter Subcaste*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -267,27 +222,18 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Gotra*"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/ac_gotra"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Select Gotra"
+                        android:hint="Select Gotra*"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
                         android:drawableRight="@drawable/down_arrow"
-                        android:paddingLeft="20dp"
+
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -299,15 +245,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Family details"
-                        android:textSize="12sp"
-                        android:textColor="@color/BlackTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <EditText
                         android:id="@+id/ed_family_details"
@@ -318,8 +255,8 @@
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
                         android:background="@drawable/inputbox_inn"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>
+
+                        android:paddingRight="30dp"/>
                 </LinearLayout>
 
 

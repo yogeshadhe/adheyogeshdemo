@@ -625,15 +625,15 @@ public class User_Profile extends Fragment {
             Log.i("final_img_url","======================"+final_img_url);
 
             Picasso.with(getActivity()).load(final_img_url)
-                    .memoryPolicy(MemoryPolicy.NO_CACHE)
-                    .networkPolicy(NetworkPolicy.NO_CACHE)
+                    //.memoryPolicy(MemoryPolicy.NO_CACHE)
+                    //.networkPolicy(NetworkPolicy.NO_CACHE)
                     .into(img_profileEdit, new Callback()
                     {
                         @Override
                         public void onSuccess() {
                             Bitmap bitmap = ((BitmapDrawable)img_profileEdit.getDrawable()).getBitmap();
                             RoundedBitmapDrawable round = RoundedBitmapDrawableFactory.create(getActivity().getResources(),bitmap);
-                            //round.setCornerRadius(Math.max(bitmap.getWidth(),bitmap.getHeight())/2.0f);
+                            round.setCornerRadius(Math.max(bitmap.getWidth(),bitmap.getHeight())/2.0f);
                             round.setCornerRadius(10);
                             round.setCircular(true);
                             img_profileEdit.setImageDrawable(round);

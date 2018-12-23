@@ -1,6 +1,8 @@
 package com.banjarasathi;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -89,9 +91,6 @@ public class Userlist_fragment extends Fragment
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
-
-
-
     public static final String TAG_firstName = "firstName";
     public static final String TAG_lastName = "lastName";
     public static final String TAG_profe = "profesion";
@@ -104,6 +103,7 @@ public class Userlist_fragment extends Fragment
     public static final String TAG_sub_cast="subcaste";
 
 
+    String auto_gender,auto_age,auto_profession,auto_cast,auto_subcast,auto_state,auto_city;
 
     URL url;
     attListAdapter adapter;
@@ -168,15 +168,6 @@ public class Userlist_fragment extends Fragment
     String http,domain_url,api_name,image_path;
     String response;
     String myJson;
-
-
-
-
-
-
-
-
-
     View loadMoreView;
     JSONArray jsonArray;
     String jsonArray_noti;
@@ -217,24 +208,7 @@ public class Userlist_fragment extends Fragment
         // Inflate the layout for this fragment
        View v= inflater.inflate(R.layout.user_list_fragment, container, false);
 
-        /*MultiDex.install(this);
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_inner);
-        TextView Header = (TextView) findViewById(R.id.toolText);
-        ImageView img_logout = (ImageView) findViewById(R.id.toolImg);
-        setSupportActionBar(toolbar);
-
-        if (getSupportActionBar() != null)
-        {
-            getSupportActionBar().setTitle("");
-            Header.setText(R.string.people);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            //img_logout.setImageResource(R.drawable.back_arrow);
-            //menu_icon
-        }*/
 
         connection=new Check_net_Connection();
         list_peopleMAP = new ArrayList<>();
@@ -251,15 +225,6 @@ public class Userlist_fragment extends Fragment
         marque.setSelected(true);
 
 
-        /*navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
-        navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
-        set(navMenuTitles, navMenuIcons);
-
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerToggle.syncState();*/
-
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.refresh_layout_att_list);
         layout_progress = (LinearLayout)v.findViewById(R.id.att_list_Progress);
@@ -270,7 +235,7 @@ public class Userlist_fragment extends Fragment
 
         load_more = (TextView)loadMoreView.findViewById(R.id.txt_loadmore);
         bar = (ProgressBar)loadMoreView.findViewById(R.id.bar);
-        loadMoreView = ((LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.loadmore, null, false);
+       // loadMoreView = ((LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.loadmore, null, false);
         //load_more = (TextView)loadMoreView.findViewById(R.id.txt_loadmore);
         //bar = (ProgressBar)loadMoreView.findViewById(R.id.bar);
         //attList_list.addFooterView(loadMoreView);
@@ -294,53 +259,46 @@ public class Userlist_fragment extends Fragment
         editor_filter = pref_filter.edit();
 
 
+
         Log.i("signup","url==http=="+http+" domain=="+domain_url+" api_name=="+api_name+" image_path="+image_path);
 
 
         if (Fare_Details.checkflag)
         {
-            //Log.i("checkflag","checkflag_true"+Fare_Details.checkflag);
-            //auto_district1 = getIntent().getStringExtra("auto_district1");
-            auto_district1 = pref_filter.getString("auto_district1","");
-            Log.i("filterPREF", "auto_district1=" + auto_district1);
-
+            auto_gender = pref_filter.getString("gender","");
+            Log.i("auto_gender", "auto_gender=" + auto_gender);
             //auto_taluka1 = getIntent().getStringExtra("auto_taluka1");
-            auto_taluka1 = pref_filter.getString("auto_taluka1","");
-            Log.i("filterPREF", "auto_taluka1=" + auto_taluka1);
-
+            auto_age = pref_filter.getString("age","");
+            Log.i("auto_age", "auto_age=" + auto_age);
             //auto_city1 = getIntent().getStringExtra("auto_city1");
-            auto_city1 = pref_filter.getString("auto_city1","");
-            Log.i("filterPREF", "auto_city1=" + auto_city1);
-
+            auto_profession = pref_filter.getString("profession","");
+            Log.i("auto_profession", "=" + auto_profession);
+            auto_cast = pref_filter.getString("cast","");
+            Log.i("auto_cast", "=" + auto_cast);
+            auto_subcast = pref_filter.getString("subcast","");
+            Log.i("auto_subcast", "=" + auto_subcast);
+            auto_state = pref_filter.getString("state","");
+            Log.i("auto_state", "=" + auto_state);
+            auto_city = pref_filter.getString("city","");
+            Log.i("auto_city", "=" + auto_city);
             //para = getIntent().getStringExtra("para");
-            para = pref_filter.getString("para","0");
+          /*  para = pref_filter.getString("para","0");
             Log.i("filterPREF", "para=" + para);
 
-            //pageFlag = getIntent().getStringExtra("pageFlag");
-            pageFlag = pref_filter.getString("pageFlag","16");
-            Log.i("filterPREF", "pageFlag=" + pageFlag);
+            */
 
-            //gender_ID = getIntent().getStringExtra("gender_ID");
-            gender_ID = pref_filter.getString("gender_ID","");
-            Log.i("filterPREF", "gender_ID=" + gender_ID);
-
-            //marital_ID = getIntent().getStringExtra("marital_ID");
-            marital_ID = pref_filter.getString("marital_ID","");
-            Log.i("filterPREF", "marital_ID=" + marital_ID);
         }
         else
         {
-            //Log.i("checkflag","checkflag_false"+Fare_Details.checkflag);
-            para="0";
-            pageFlag="16";
-            auto_district1="";
-            auto_taluka1="";
-            auto_city1="";
-            gender_ID = "";
-            marital_ID = "";
+            auto_gender="";
+            auto_age="";
+            auto_cast="";
+            auto_subcast = "";
+            auto_state = "";
+            auto_city="";
+            //para="0";
+
         }
-
-
         if (connection.hasConnection(getActivity()))
         {
             hit_once = false;
@@ -353,16 +311,11 @@ public class Userlist_fragment extends Fragment
 
         try
         {
-            /*PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
-            pack_version_code = info.versionCode;
-            Log.i("version_code", "" + pack_version_code);//1
-            pack_verion = String.valueOf(pack_version_code);
-            Log.i("version_code", "pack_verion=" + pack_verion);//1*/
-
+            PackageInfo pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
+            pack_verion = pInfo.versionName;
             if (connection.hasConnection(getActivity()))
             {
                 //checkVersion();
-                //suspendUser();
             }
             else
             {
@@ -373,9 +326,7 @@ public class Userlist_fragment extends Fragment
         catch (Exception e)
         {
         }
-
         attList_list.setTextFilterEnabled(true);
-
         attList_list.setOnScrollListener(new AbsListView.OnScrollListener()
         {
             @Override
@@ -384,7 +335,6 @@ public class Userlist_fragment extends Fragment
                     userScrolled = true;
                 }
             }
-
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount)
             {
@@ -397,7 +347,7 @@ public class Userlist_fragment extends Fragment
                         lastVisible = visibleItemCount - 1;
 
                         bar.setVisibility(View.VISIBLE);
-                        load_more.setText("Loading more data...");
+                        load_more.setText("Loading more data");
 
                         if (ed_search.getText().toString().equals("")) {
                             if (attList_list.getFooterViewsCount() == 0) {
@@ -433,19 +383,17 @@ public class Userlist_fragment extends Fragment
                 array_list1.clear();
                 attList_list.setAdapter(null);
                 Calendar c = Calendar.getInstance();
-
-
                 if (attList_list.getFooterViewsCount() > 0)
                 {
                     attList_list.removeFooterView(loadMoreView);
                 }
-                para="0";
-                pageFlag="16";
-                auto_district1="";
-                auto_taluka1="";
-                auto_city1="";
-                gender_ID = "";
-                marital_ID = "";
+                auto_gender="";
+                auto_age="";
+                auto_cast="";
+                auto_subcast = "";
+                auto_state = "";
+                auto_city="";
+                //para="0";
                 getAttendanceListing();
 
             }
@@ -468,7 +416,6 @@ public class Userlist_fragment extends Fragment
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String text = ed_search.getText().toString().toLowerCase(Locale.getDefault());
@@ -481,29 +428,16 @@ public class Userlist_fragment extends Fragment
                     attList_list.removeFooterView(loadMoreView);
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-
-
         layout_img.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
-            {
-
-                //show_my_leave();
-                Intent intent=new Intent(getActivity(),Fare_Details.class);
-                startActivity(intent);
-
-
-            }
+            { loadFragment(new UserListFilter()); }
         });
-
-
-
         return  v;
     }
 
@@ -512,36 +446,34 @@ public class Userlist_fragment extends Fragment
     {
         try
         {
-            String url = "";
-            String query = String.format("apptype=%s&pageFlag=%s",
-                    URLEncoder.encode("1","UTF-8"),
-                    URLEncoder.encode("21","UTF-8"));
-            String version_url = url + query;
+            String url = "http://banjarasathi.com/Api/version.php";
+            String version_url = url ;
             Log.i("url","version="+version_url);
 
             Response.Listener<String> success = new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-
-                   /* if (progressDialog1.isShowing())
-                    {
-                        progressDialog1.dismiss();
-                    }*/
+                    /*
+                   {"success":1,"data":[{"Id":"1","version name":"1.0.1","status":"1",
+                     "createdDateTime":"2018-12-10 21:18:14"}],
+                     "message":"success"}
+                   */
 
                     Log.i("response","version="+response);
-                    // [{"msg":"Success","responsecode":1,"responsedata":[{"Version":"1"}]}]
                     try
                     {
-                        JSONArray jsonArray = new JSONArray(response);
-                        JSONObject jsonObject = jsonArray.getJSONObject(0);
-                        String msg = jsonObject.getString("msg");
-                        String responsecode = jsonObject.getString("responsecode");
+                        JSONObject jsonObject = new JSONObject(response);
+                        String responsecode = jsonObject.getString("success");
+                        Log.i("responsecode","=="+responsecode);
                         if (responsecode.equals("1"))
                         {
-                            JSONArray array = jsonObject.getJSONArray("responsedata");
-                            JSONObject object = array.getJSONObject(0);
-                            String version = object.getString("Version");
-                            Log.i("version","response=="+version);
+                            JSONArray jsonArray = jsonObject.getJSONArray("data");
+                            JSONObject jsonObject1=jsonArray.getJSONObject(0);
+
+                            String version = jsonObject1.getString("version name");
+                            Log.i("version","=="+version);
+                            String dateTime = jsonObject1.getString("createdDateTime");
+                            Log.i("dateTime","=="+dateTime);
 
                             if (!version.equals(pack_verion))
                             {
@@ -631,7 +563,7 @@ public class Userlist_fragment extends Fragment
             request.setRetryPolicy(new DefaultRetryPolicy(3000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             requestQueue.add(request);
 
-        } catch (UnsupportedEncodingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -666,20 +598,26 @@ public class Userlist_fragment extends Fragment
             {
                 try
                 {
-                   // http://telibandhan.safegird.com/appapinew.php?userId=1&cityId=25&taluka=abc&district=abc&para=1&pageFlag=16
-                    //http://telibandhan.safegird.com/appapinew.php?userId=1&pageFlag=16
-                    //Log.i("signup","url==http=="+http+" domain=="+domain_url+" api_name=="+api_name);
+                    auto_gender="";
+                    auto_age="";
+                    auto_cast="";
+                    auto_subcast = "";
+                    auto_state = "";
+                    auto_city="";
+                    //para="0";
+                    //pageFlag="16";
 
                     String leave_url = "http://banjarasathi.com/Api/userlist.php";
-                   /* String query3 = String.format("userId=%s&cityId=%s&taluka=%s&district=%s&para=%s&pageFlag=%s&gender=%s&martial=%s",
+                   /* String query3 = String.format("userId=%s&auto_gender=%s&auto_age=%s&auto_cast=%s&auto_subcast=%s&auto_state=%s&auto_city=%s&para=%s",
                             URLEncoder.encode(uid, "UTF-8"),
-                            URLEncoder.encode(auto_city1,"UTF-8"),
-                            URLEncoder.encode(auto_taluka1,"UTF-8"),
-                            URLEncoder.encode(auto_district1,"UTF-8"),
-                            URLEncoder.encode(para,"UTF-8"),//para
-                            URLEncoder.encode(pageFlag,"UTF-8"),
-                            URLEncoder.encode(gender_ID,"UTF-8"),
-                            URLEncoder.encode(marital_ID,"UTF-8"));*/
+                            URLEncoder.encode(auto_gender,"UTF-8"),
+                            URLEncoder.encode(auto_age,"UTF-8"),
+                            URLEncoder.encode(auto_cast,"UTF-8"),
+                            URLEncoder.encode(auto_subcast,"UTF-8"),
+                            URLEncoder.encode(auto_state,"UTF-8"),
+                            URLEncoder.encode(auto_city,"UTF-8"),
+                            URLEncoder.encode(para,"UTF-8"));*/
+                   // url = new URL(leave_url + query3);
 
 
                     url = new URL(leave_url );
@@ -739,7 +677,7 @@ public class Userlist_fragment extends Fragment
                 if (result != null || !result.equals("null"))
                 {
                     myJson = result;
-                    Log.i("myJson", myJson);
+                    Log.i("myJson_list", myJson);
                     if (!refresh)
                     {
                         if (date_select)
@@ -893,6 +831,8 @@ public class Userlist_fragment extends Fragment
                                     txt_no_data.setVisibility(View.GONE);
                                     adapter.notifyDataSetChanged();
                                     startIndex = adapter.getCount();
+                                    Log.i("startIndex","Infirstcasll=="+startIndex);
+
                                 }
                             }
                             catch (JSONException e)
@@ -983,10 +923,12 @@ public class Userlist_fragment extends Fragment
             Log.i("cast",cast);
             final String subcast=attDetails_list.get(position).getsubcast();
             Log.i("subcast",subcast);
-            final  String profe=attDetails_list.get(position).getprofe();
-            Log.i("profe",profe);
-            final String income=attDetails_list.get(position).getincome();
-            Log.i("income",income);
+            final  String profe="test";
+                    //attDetails_list.get(position).getprofe();
+           // Log.i("profe",profe);
+            final String income="tesr";
+                   // attDetails_list.get(position).getincome();
+            //Log.i("income",income);
 
 
             String photo = attDetails_list.get(position).getProfile_photo();
@@ -1006,12 +948,14 @@ public class Userlist_fragment extends Fragment
                 public void onClick(View v)
                 {
 
-                    /*String userid=txt_uID.getText().toString();
-                    Intent intent=new Intent(getActivity(),ProfileView.class);
+                    String userid=txt_uID.getText().toString();
+                    Intent intent=new Intent(getActivity(),SathiProfileActivity.class);
                     intent.putExtra("userid_people",userid);
-                    intent.putExtra("people_flag",true);
+                    //intent.putExtra("people_flag",true);
                     startActivity(intent);
-                    ///finish();*/
+                    ///finish();
+
+                    //loadFragment(new SathiProfile());
                 }
             });
 
@@ -1076,8 +1020,10 @@ public class Userlist_fragment extends Fragment
             public void run()
             {
                 int end = startIndex + 13;
+                Log.i("end","updateListView"+end);
                 for (int i = startIndex; i < end; i++)
                 {
+                    Log.i("startIndex","==updateListView"+startIndex);
                     try
                     {
                         get_set_AttListing get_set = new get_set_AttListing();
@@ -1096,7 +1042,7 @@ public class Userlist_fragment extends Fragment
                         get_set.setcast(object.getString(TAG_cast));
                         get_set.setsubcast(object.getString(TAG_sub_cast));
 
-                        get_set.setProfile_photo(object.getString(TAG_photo));
+                        get_set.setProfile_photo("tttttt");
 
 
 
@@ -1118,7 +1064,6 @@ public class Userlist_fragment extends Fragment
                     bar.setVisibility(View.GONE);
                     load_more.setText("No more data");
                 }
-
                 adapter = new attListAdapter(getActivity(), array_list1);
                 attList_list.setAdapter(adapter);
 
@@ -1129,139 +1074,6 @@ public class Userlist_fragment extends Fragment
             }
         }, 2000);
     }
-
-    //for suspend user account and logout user..
-    /*public void suspendUser()
-    {
-        try
-        {
-            String url = http + domain_url + api_name;
-            String query = String.format("userId=%s&pageFlag=%s",
-                    URLEncoder.encode(uid,"UTF-8"),
-                    URLEncoder.encode("23","UTF-8"));
-
-            String url_final = url + query;
-            Log.i("url","suspendUser=="+url_final);
-
-            Response.Listener<String> success = new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-
-                    Log.i("response","suspend="+response);
-                    //[{"msg":"Success","responsecode":1,"responsedata":{"data":[{"appStatus":"0","status":"1"}],
-                    // "message":"We are suspending your application for Telibandhan Diary App.
-                    // Please contact us at077099 96999 for more details."}}]
-
-                    try
-                    {
-                        JSONArray jsonArray = new JSONArray(response);
-                        JSONObject jsonObject = jsonArray.getJSONObject(0);
-                        String msg = jsonObject.getString("msg");
-                        Log.i("suspend","msg=="+msg);
-                        String responsecode = jsonObject.getString("responsecode");
-                        Log.i("suspend","responsecode=="+responsecode);
-
-                        JSONObject object = jsonObject.getJSONObject("responsedata");
-                        Log.i("suspend","object=="+object);
-                        JSONArray array = object.getJSONArray("data");
-                        Log.i("suspend","array=="+array);
-                        JSONObject object1 = array.getJSONObject(0);
-
-                        String appStatus = object1.getString("appStatus");
-                        Log.i("suspend","appStatus=="+appStatus);
-                        String status = object1.getString("status");
-                        Log.i("suspend","status=="+status);
-
-                        String message = object.getString("message");
-                        Log.i("suspend","message"+message);
-
-                        if (appStatus.equals("0") || status.equals("0"))
-                        {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(VillageList.this);
-                            builder.setMessage(message);
-                            builder.setCancelable(false);
-                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                    //editor.clear();
-                                    //editor.commit();
-                                    session.logout();
-
-                                    Intent intent = new Intent(VillageList.this,SignIn.class);
-                                    startActivity(intent);
-                                }
-                            });
-
-                            builder.show();
-
-                        }
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
-            Response.ErrorListener errorListener = new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                    if (error.networkResponse == null)
-                    {
-                        if (error.getClass().equals(TimeoutError.class))
-                        {
-                            Log.i("volley","error==time out--in");
-                            //Toast.makeText(Sign_up.this,"error-time out",Toast.LENGTH_SHORT).show();
-                            Snackbar snackbar = Snackbar.make(coordinator_layout,"Server Connection Timeout",Snackbar.LENGTH_LONG);
-                            View sbView = snackbar.getView();
-                            sbView.setBackgroundColor(getResources().getColor(R.color.PinkBgColor));
-                            snackbar.show();
-                        }
-                        if (error.getClass().equals(NoConnectionError.class))
-                        {
-                            Snackbar snackbar = Snackbar.make(coordinator_layout,"Check Internet Connection",Snackbar.LENGTH_LONG);
-                            View sbView = snackbar.getView();
-                            sbView.setBackgroundColor(getResources().getColor(R.color.PinkBgColor));
-                            snackbar.show();
-                        }
-                        if (error.getClass().equals(NetworkError.class))
-                        {
-                            Snackbar snackbar = Snackbar.make(coordinator_layout,"Check Internet Connection id Active",Snackbar.LENGTH_LONG);
-                            View sbView = snackbar.getView();
-                            sbView.setBackgroundColor(getResources().getColor(R.color.PinkBgColor));
-                            snackbar.show();
-                        }
-                        if (error.getClass().equals(Network.class))
-                        {
-                            Snackbar snackbar = Snackbar.make(coordinator_layout,"Check Internet Connection id Active",Snackbar.LENGTH_LONG);
-                            View sbView = snackbar.getView();
-                            sbView.setBackgroundColor(getResources().getColor(R.color.PinkBgColor));
-                            snackbar.show();
-                        }
-                    }
-                }
-            };
-
-            StringRequest request = new StringRequest(Request.Method.GET,url_final,success,errorListener);
-            request.setRetryPolicy(new DefaultRetryPolicy(3000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-            requestQueue.add(request);
-
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-
-
-
-
-
-
-
-
-
-
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -1281,7 +1093,17 @@ public class Userlist_fragment extends Fragment
         mListener = null;
     }
 
+    private void loadFragment(Fragment fragment)
+    {
+        // create a FragmentManager
+        FragmentManager fm = getFragmentManager();
+        // create a FragmentTransaction to begin the transaction and replace the Fragment
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        // replace the FrameLayout with new Fragment
 
+        fragmentTransaction.replace(R.id.frame_container, fragment);
+        fragmentTransaction.commit(); // save the changes
+    }
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

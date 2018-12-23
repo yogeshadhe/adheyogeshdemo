@@ -2,7 +2,6 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="56dp"
@@ -11,13 +10,6 @@
 
     <FrameLayout android:layout_width = "match_parent"
         android:layout_height = "match_parent">
-
-
-
-
-
-
-
         <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -81,7 +73,7 @@
                 android:orientation="horizontal"
                 android:layout_marginRight="10dp">
                 <EditText
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:id="@+id/att_list_edSearch"
                     android:layout_height="30dp"
                     android:hint="Search"
@@ -97,14 +89,15 @@
 
             <LinearLayout
                 android:id="@+id/layout_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_weight="0.1"
                 android:background="@drawable/circle_orange"
                 android:gravity="center">
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/filter_icon"
                     android:layout_gravity="center_vertical"/>
             </LinearLayout>

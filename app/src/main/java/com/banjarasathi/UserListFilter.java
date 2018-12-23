@@ -1,50 +1,38 @@
 package com.banjarasathi;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by admin on 05-11-2016.
- */
-public class Fare_Details extends AppCompatActivity
-{
+
+public class UserListFilter extends Fragment {
+
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+    private String mParam1;
+    private String mParam2;
+    private OnFragmentInteractionListener mListener;
+
     AutoCompleteTextView auto_age ,auto_profe,auto_cast,auto_SubCast,auto_state,auto_City;;
     String city_id;
     ArrayList<String> list_city_ID;
@@ -78,33 +66,47 @@ public class Fare_Details extends AppCompatActivity
 
     RequestQueue requestQueue;
 
+
+    public UserListFilter() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.village_listi_popup);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
 
-        getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v= inflater.inflate(R.layout.village_listi_popup, container, false);
 
-        this.setFinishOnTouchOutside(true);
+        getActivity().getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
-
-        auto_gender = (AutoCompleteTextView)findViewById(R.id.auto_gender);
-        auto_age = (AutoCompleteTextView)findViewById(R.id.auto_age);
-        auto_profe = (AutoCompleteTextView) findViewById(R.id.auto_profession);
-        auto_cast = (AutoCompleteTextView) findViewById(R.id.auto_cast);
-        auto_SubCast = (AutoCompleteTextView) findViewById(R.id.auto_SubCast);
-        auto_state = (AutoCompleteTextView) findViewById(R.id.auto_state);
-        auto_City = (AutoCompleteTextView) findViewById(R.id.auto_City);
-
-        lay_close_img=(LinearLayout)findViewById(R.id.lay_close_img);
-        Button btn_submit=(Button)findViewById(R.id.btn_submit);
+        getActivity().setFinishOnTouchOutside(true);
 
 
-        requestQueue = Volley.newRequestQueue(this);
+        auto_gender = (AutoCompleteTextView)v.findViewById(R.id.auto_gender);
+        auto_age = (AutoCompleteTextView)v.findViewById(R.id.auto_age);
+        auto_profe = (AutoCompleteTextView)v. findViewById(R.id.auto_profession);
+        auto_cast = (AutoCompleteTextView)v. findViewById(R.id.auto_cast);
+        auto_SubCast = (AutoCompleteTextView)v. findViewById(R.id.auto_SubCast);
+        auto_state = (AutoCompleteTextView)v. findViewById(R.id.auto_state);
+        auto_City = (AutoCompleteTextView)v. findViewById(R.id.auto_City);
 
-        pref_filter = getApplicationContext().getSharedPreferences(PREF_NAME_FILTER,this.MODE_PRIVATE);
+        lay_close_img=(LinearLayout)v.findViewById(R.id.lay_close_img);
+        Button btn_submit=(Button)v.findViewById(R.id.btn_submit);
+
+
+        requestQueue = Volley.newRequestQueue(getActivity());
+
+        pref_filter = getActivity().getSharedPreferences(PREF_NAME_FILTER,getActivity().MODE_PRIVATE);
         editor_filter = pref_filter.edit();
 
 
@@ -270,7 +272,7 @@ public class Fare_Details extends AppCompatActivity
                 editor_filter.putString("pageFlag", "16");
                 editor_filter.commit();
 
-                Intent intent = new Intent(Fare_Details.this, Userlist_fragment.class);
+                Intent intent = new Intent(getActivity(), Userlist_fragment.class);
                    /* intent.putExtra("gender",gender);
                     intent.putExtra("age",age);
                     intent.putExtra("profession",profession);
@@ -278,24 +280,26 @@ public class Fare_Details extends AppCompatActivity
                     intent.putExtra("subcast",subcast);
                     intent.putExtra("state",state);
                     intent.putExtra("city",city);*/
-                    //intent.putExtra("para","1");
-                    //intent.putExtra("pageFlag","16");
+                //intent.putExtra("para","1");
+                //intent.putExtra("pageFlag","16");
                 startActivity(intent);
-                finish();
+                //finish();
 
             }
         });
 
 
-        lay_close_img.setOnClickListener(new View.OnClickListener() {
+        /*lay_close_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
-        });
+        });*/
+
+         return v;
     }
-    public void setadapter()
-    {
+
+    public void setadapter() {
 
         List<String> list_gender = new ArrayList<>();
         list_gender.add("Male");
@@ -306,24 +310,57 @@ public class Fare_Details extends AppCompatActivity
         //city
         //profession
         //education
-        ArrayAdapter<String> adapter_age = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapter_age = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_age.setAdapter(adapter_age);
 
-        ArrayAdapter<String> adapter_prof = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapter_prof = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_profe.setAdapter(adapter_prof);
 
-        ArrayAdapter<String> adapter_cast = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapter_cast = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_cast.setAdapter(adapter_cast);
 
-        ArrayAdapter<String> adapter_subcast = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapter_subcast = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_SubCast.setAdapter(adapter_subcast);
 
-        ArrayAdapter<String> adapte_state = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapte_state = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_state.setAdapter(adapte_state);
 
-        ArrayAdapter<String> adapter_city = new ArrayAdapter<String>(Fare_Details.this,R.layout.dropdown,list_gender);
+        ArrayAdapter<String> adapter_city = new ArrayAdapter<String>(getActivity(),R.layout.dropdown,list_gender);
         auto_City.setAdapter(adapter_city);
 
     }
 
+
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+  /**/
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+    }
 }
+
+/*
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+*/

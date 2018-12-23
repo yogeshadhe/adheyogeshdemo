@@ -49,12 +49,10 @@ public class Login_Activity extends AppCompatActivity
         else
         {
             loadFragment(new Login_fragment());
-
         }
-
-
-
     }
+
+
 
     private void loadFragment(Fragment fragment)
     {
@@ -65,5 +63,28 @@ public class Login_Activity extends AppCompatActivity
         // replace the FrameLayout with new Fragment
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit(); // save the changes
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        Log.i("count","=="+count);
+      /*  if (count == 0)
+        {
+            super.onBackPressed();
+            //additional code
+        }
+       *//* else if (count == 1)
+        {
+            super.onBackPressed();
+            //additional code
+        }*//*
+        else
+        {
+            getFragmentManager().popBackStack();
+        }*/
+        //super.onBackPressed();
     }
 }

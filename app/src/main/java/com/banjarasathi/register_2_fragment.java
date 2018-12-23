@@ -292,6 +292,8 @@ public class register_2_fragment extends Fragment
     {
         // create a FragmentManager
         FragmentManager fm = getFragmentManager();
+
+
         // create a FragmentTransaction to begin the transaction and replace the Fragment
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         // replace the FrameLayout with new Fragment

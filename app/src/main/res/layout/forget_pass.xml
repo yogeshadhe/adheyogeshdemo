@@ -8,7 +8,7 @@
     android:layout_height="fill_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/PinkBgColor">
+    android:background="@color/WhiteBgColor">
 
     <FrameLayout android:layout_width = "match_parent"
         android:layout_height = "match_parent"
@@ -36,15 +36,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile No"
-                        android:textSize="12sp"
-                        android:textColor="@color/WhiteTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
+
                     <EditText
                         android:id="@+id/edt_email"
                         android:layout_width="match_parent"
@@ -53,9 +45,7 @@
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
-                        android:background="@drawable/inputbox"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"/>
+                        android:background="@drawable/inputbox_inn" />
 
                     <!--Button-->
                     <Button
@@ -92,15 +82,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="OTP"
-                            android:textSize="12sp"
-                            android:textColor="@color/WhiteTextColor"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="5dp"/>
+
                         <EditText
                             android:id="@+id/edt_otp"
                             android:layout_width="match_parent"
@@ -109,9 +91,8 @@
                             android:textSize="11sp"
                             android:textColorHint="@color/GreyTextColor"
                             android:textColor="@color/BlackTextColor"
-                            android:background="@drawable/inputbox"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"/>
+                            android:background="@drawable/inputbox_inn"
+                           />
                         </LinearLayout>
 
                     <LinearLayout
@@ -121,18 +102,6 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp">
-
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Password"
-                            android:textSize="12sp"
-                            android:textColor="@color/WhiteTextColor"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="5dp"/>
                         <EditText
                             android:id="@+id/edt_new_pass"
                             android:layout_width="match_parent"
@@ -142,9 +111,8 @@
                             android:textSize="11sp"
                             android:textColorHint="@color/GreyTextColor"
                             android:textColor="@color/BlackTextColor"
-                            android:background="@drawable/inputbox"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"/>
+                            android:background="@drawable/inputbox_inn"
+                           />
                     </LinearLayout>
 
                     <LinearLayout
@@ -154,18 +122,6 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp">
-
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Retype Password"
-                            android:textSize="12sp"
-                            android:textColor="@color/WhiteTextColor"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="5dp"/>
                         <EditText
                             android:id="@+id/edt_confirm_pass"
                             android:layout_width="match_parent"
@@ -175,9 +131,8 @@
                             android:textSize="11sp"
                             android:textColorHint="@color/GreyTextColor"
                             android:textColor="@color/BlackTextColor"
-                            android:background="@drawable/inputbox"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"/>
+                            android:background="@drawable/inputbox_inn"
+                          />
                     </LinearLayout>
 
                     <!--Button-->
@@ -187,6 +142,8 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Reset Password"
                         android:textSize="13sp"
                         android:textColor="@color/WhiteTextColor"

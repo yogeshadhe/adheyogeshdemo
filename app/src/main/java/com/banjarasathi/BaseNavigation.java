@@ -1,6 +1,7 @@
 package com.banjarasathi;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -141,7 +142,7 @@ public class BaseNavigation extends AppCompatActivity
             Log.i("NameNotFoundException", e.toString());
         }
 
-       // checkversion();
+        //checkversion();
 
         Dialer = (ImageView) findViewById(R.id.ccrnumber);
         Dialer.setOnClickListener(new View.OnClickListener() 
@@ -172,30 +173,7 @@ public class BaseNavigation extends AppCompatActivity
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        /*if (findViewById(R.id.container) != null)
-        {
-            if (savedInstanceState != null) 
-            {
-                return;
-            }
 
-            //MyBooking myBooking = new MyBooking();
-            android.app.Fragment fragment = null;
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, myBooking).commit();
-        }
-      */
-        /*CCRlogo = (ImageView) findViewById(R.id.ccrlogo);
-        CCRlogo.setOnClickListener(new View.OnClickListener() 
-        {
-            @Override
-            public void onClick(View v) 
-            {
-                Intent in = new Intent(getApplicationContext(), BaseNavigation.class);
-                startActivity(in);
-                finish();
-            }
-        });*/
 
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
         navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
@@ -213,26 +191,14 @@ public class BaseNavigation extends AppCompatActivity
         name.setText(FName + " " + M_name+" "+L_name);
         email.setText(mobile);
 
-        edit_profile.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) 
-            {
-
-                 Fragment  fragment = new User_Profile();
-                //finish();
-
-
-               /* myprofile my_profile = new myprofile();//Get Fragment Instance
-                Bundle data = new Bundle();
-                //data.putString("edttext", "1");
-                //my_profile.setArguments(data);
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, test).commit();
-                NavDrawerListAdapter.setSelectedPosition(1);
-                adapter.notifyDataSetChanged();
-                mDrawerLayout.closeDrawer(mDrawerList)*/;
-            }
-        });
+        if (savedInstanceState == null) {
+            edit_profile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displayView(2);
+                }
+            });
+        }
         navDrawerItems = new ArrayList<NavDrawerItem>();
 
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
@@ -296,106 +262,7 @@ public class BaseNavigation extends AppCompatActivity
             displayView(0);
         }
     }
-
-    /*public void checkversion()
-    {
-        try
-        {
-            String urlnew =""+Url+"/versionCheck/?";
-            String uri = Uri.parse(urlnew)
-                    .buildUpon()
-                    .appendQueryParameter("ptopVersion", String.valueOf(version_code))
-                    .appendQueryParameter("uId", Uid)
-                    .appendQueryParameter("type", "0")
-                    .appendQueryParameter("ApiKey", APIkey)
-                    .appendQueryParameter("UserID", "1212")
-                    .appendQueryParameter("UserIPAddress", IPaddress)
-                    .appendQueryParameter("UserAgent", "androidApp")
-                    .appendQueryParameter("responsetype", "2")
-                    .build().toString();
-
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(uri);
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            final String response = httpclient.execute(httppost, responseHandler);
-            myJson = response;
-
-            runOnUiThread(new Runnable()
-            {
-                public void run()
-                {
-                    try
-                    {
-                        JSONArray json = new JSONArray(myJson);
-                        //    Log.i("json", "" + json);
-                        JSONObject jsonObject = json.getJSONObject(0);
-                        String resp = jsonObject.getString("responseCode");
-                        String respmsg = jsonObject.getString("responseMessage");
-                        final String Status_res_massge1 = respmsg.substring(2, respmsg.length() - 2);
-
-                        if(resp.equals("0"))
-                        {
-                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(BaseNavigation.this);
-                            alertDialogBuilder.setMessage(Status_res_massge1)
-                                    .setTitle("update app")
-                                    .setCancelable(false)
-                                    .setPositiveButton(" Yes ", new DialogInterface.OnClickListener()
-                                    {
-                                        public void onClick(DialogInterface dialog, int id)
-                                        {
-                                            Intent intent = new Intent(Intent.ACTION_VIEW);
-                                            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id="+Packagename+"&hl=en"));
-                                            startActivity(intent);
-                                            finish();
-                                        }
-                                    });
-
-                            alertDialogBuilder.setNegativeButton(" No ", new DialogInterface.OnClickListener()
-                            {
-                                public void onClick(DialogInterface dialog, int id)
-                                {
-                                    Intent startMain = new Intent(Intent.ACTION_MAIN);
-                                    startMain.addCategory(Intent.CATEGORY_HOME);
-                                    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(startMain);
-                                    finish();
-                                }
-                            });
-
-                            AlertDialog alert = alertDialogBuilder.create();
-                            alert.show();
-                        }
-                    }
-                    catch (JSONException j)
-                    {
-                        j.printStackTrace();
-                    }
-                }
-            });
-        }
-        catch (IOException e)
-        {
-            Log.i("Error", "" + e.toString());
-        }
-    }*/
-    
-   /* @Override
-    public boolean onOptionsItemSelected(MsssssssssssssssssssenuItem item)
-    {
-        if (mDrawerToggle.onOptionsItemSelected(item))
-        {
-            return true;
-        }
-        switch (item.getItemId())
-        {
-            case R.id.action_settings:
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
-
-    public void displayView(int position) 
+    public void displayView(int position)
     {
         Fragment fragment = new Fragment();
         switch (position) 
@@ -406,7 +273,7 @@ public class BaseNavigation extends AppCompatActivity
                 break;
 
             case 1:
-               // fragment = new Userlist_fragment();
+                fragment = new Userlist_fragment();
 
                 break;
 
@@ -416,14 +283,7 @@ public class BaseNavigation extends AppCompatActivity
 
                 break;
             
-         /*   case 3:
-                fragment = new User();
 
-                break;
-            
-            case 4:
-                fragment = new myprofile();
-                break;*/
             
             case 3:
 
@@ -586,9 +446,15 @@ public class BaseNavigation extends AppCompatActivity
 
         int count = getFragmentManager().getBackStackEntryCount();
 
+        Log.i("count","=="+count);
         if (count == 0)
         {
             super.onBackPressed();
+            //additional code
+        }
+        else if (count == 1)
+        {
+            //super.onBackPressed();
             //additional code
         }
         else
@@ -598,32 +464,7 @@ public class BaseNavigation extends AppCompatActivity
 
     }
 
-    public void alertDialoge()
-    {
-        Log.i("Alert", "Alert");
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("You will be logout from this App")
-                .setTitle("")
-                .setCancelable(false)
-                .setPositiveButton(" Yes ", new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface dialog, int id)
-                    {
-                        //session.logoutUser();
-                        finish();
-                    }
-                });
 
-        alertDialogBuilder.setNegativeButton(" No ", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id)
-            {
-                dialog.cancel();
-            }
-        });
-
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
 
     Runnable mExitRunnable = new Runnable() {
         @Override
@@ -639,4 +480,5 @@ public class BaseNavigation extends AppCompatActivity
         Log.i("onPause", "onpasued_basenavigation");
         handler.removeCallbacks(mExitRunnable);
     }
+
 }

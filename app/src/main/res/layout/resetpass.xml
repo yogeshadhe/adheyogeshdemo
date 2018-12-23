@@ -9,7 +9,7 @@
     tools:context=".MainActivity"
     android:layout_marginTop="56dp"
     android:orientation="vertical"
-    android:background="@color/PinkBgColor">
+    android:background="@color/WhiteBgColor">
 
 
     <FrameLayout android:layout_width = "match_parent"
@@ -32,30 +32,19 @@
                     android:orientation="vertical"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Old Password"
-                        android:textSize="12sp"
-                        android:textColor="@color/WhiteTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <EditText
                         android:id="@+id/ed_old_pass"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:inputType="textPassword"
-                        android:hint="Enter Password"
+                        android:hint="Enter Old Password"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
-                        android:background="@drawable/inputbox"
-                        android:paddingLeft="20dp"
+                        android:background="@drawable/inputbox_inn"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -69,27 +58,17 @@
                     android:layout_marginBottom="10dp">
 
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="New Password"
-                        android:textSize="12sp"
-                        android:textColor="@color/WhiteTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
 
                     <EditText
                         android:id="@+id/ed_new_password"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:inputType="textPassword"
-                        android:hint="Enter Password"
+                        android:hint="Enter New Password"
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
-                        android:background="@drawable/inputbox"
-                        android:paddingLeft="20dp"
+                        android:background="@drawable/inputbox_inn"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -101,15 +80,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Retype Password"
-                        android:textSize="12sp"
-                        android:textColor="@color/WhiteTextColor"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"/>
+
                     <EditText
                         android:id="@+id/ed_retype_pass"
                         android:inputType="textPassword"
@@ -119,8 +90,7 @@
                         android:textSize="11sp"
                         android:textColorHint="@color/GreyTextColor"
                         android:textColor="@color/BlackTextColor"
-                        android:background="@drawable/inputbox"
-                        android:paddingLeft="20dp"
+                        android:background="@drawable/inputbox_inn"
                         android:paddingRight="20dp"/>
                 </LinearLayout>
 
@@ -129,12 +99,14 @@
                     android:id="@+id/btn_forgotPass"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     android:text="Change Password"
                     android:textSize="13sp"
                     android:textColor="@color/WhiteTextColor"
                     android:textAllCaps="false"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/button"
                     android:stateListAnimator="@null"/>
@@ -143,17 +115,7 @@
             </LinearLayout>
 
         </ScrollView>
-
-        <!--<android.support.design.widget.CoordinatorLayout
-            android:id = "@+id/coordinator_layout"
-            android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
-            android:layout_marginTop="400dp">
-        </android.support.design.widget.CoordinatorLayout>
--->
     </FrameLayout>
-
-
 </LinearLayout>
 
 
